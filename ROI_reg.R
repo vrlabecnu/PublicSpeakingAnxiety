@@ -76,8 +76,8 @@ pre <- read.csv("./beta/reg_narm_N_pre_ROI.csv",header = TRUE)
 sp <- read.csv("./beta/reg_narm_N_sp_ROI.csv",header = TRUE)
 
 # regression --------------------------------------------------------------
-lm_pre_PRCS <- lm(PRCS ~ r_DLPFC+r_preC+r_postC+r_STG+l_IFG+l_DLPFC+l_pSTG, data = pre)
-lm_sp_Performance <- lm(Performance ~ r_postC+r_TP+r_STG+r_MTG, data = sp)
+lm_pre_PRCS <- lm(PRCS ~ r_DLPFC+r_preC+r_postC+r_IFG+l_DLPFC+l_postC, data = pre)
+lm_sp_Performance <- lm(Performance ~ r_postC+r_TP+r_STG+r_MTG+l_pSTG, data = sp)
 
 # scatter plot ------------------------------------------------------------
 pre$reg_PRCS <- lm_pre_PRCS$fitted.values
